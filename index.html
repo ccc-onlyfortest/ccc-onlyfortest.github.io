@@ -31,6 +31,47 @@ src="https://www.facebook.com/tr?id=286661513582113&ev=PageView&noscript=1"
     <main>
         <h1>Welcome to My Website</h1>  
     </main>
-
+<button onClick="clickAddToCart()" id="cart">Add to Cart</button>
+	  <button onClick="clickPurchase()" id="purchase">Purchase</button>
+	  <button onClick="clickViewContent()" id="view">ViewContent</button>
+	  
+	  <script>
+function clickAddToCart() {
+	console.log('cart');
+  fbq('track', 'AddToCart',
+  // begin required parameter object
+  {
+    value: .5,
+    currency: 'USD',
+    content_ids: ['201', '301'] // required property, if not using 'contents' property
+  }
+  // end required parameter object
+);
+}
+		  
+		  function clickPurchase() {
+			  console.log('purchase');
+  fbq('track', 'Purchase',
+  // begin required parameter object
+  {
+    value: .5,
+    currency: 'USD',
+    content_ids: ['201', '301'] // required property, if not using 'contents' property
+  }
+  // end required parameter object
+);
+}
+		  function clickViewContent() {
+			  console.log('content');
+  fbq('track', 'ViewContent',
+  // begin required parameter object
+  {
+    value: .5,
+    currency: 'USD',
+    content_ids: ['201', '301'] // required property, if not using 'contents' property
+  }
+  // end required parameter object
+);
+</script>
   </body>
 </html>
